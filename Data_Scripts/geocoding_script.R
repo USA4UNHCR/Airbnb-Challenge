@@ -7,7 +7,9 @@
 #########
 
 #city is a vector of city names, feel free to change it to your string vector of addresses
-geocoded_cities<-cbind(city=cities$city[1],geocoded_cities$results[3][[1]][[2]])
+
+geocoded<-google_geocode(cities$city[1], key = "AIzaSyC2N9bfFtefkH4iceFCttkmAiJiZ3alGUo")
+geocoded_cities<-cbind(city=cities$city[1],geocoded$results[[3]][[2]])
 for (j in 2:2500) { #Limit at 2500 because that's the number of free queries you get
   geocoded<-google_geocode(cities$city[j], key = "YOUR_KEY")
   if(ncol(geocoded$results[[3]])<4){ 
