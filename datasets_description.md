@@ -22,9 +22,9 @@ Other
 + Cumulative Refugee Admissions : Refugees admitted to the US by continent of origin, 1975 - 2015 (from: https://2009-2017.state.gov/j/prm/releases/statistics/251288.htm)
 + Refugee Admissions 2007 - 2015 : Panel data of refugee admissions by country each month but aggregated at the US level
 + Refugee Arrivals by Country 2016 : Panel data of refugee admissions by country but aggregated at the US level and year
-+ Refugee Arrivals by Age : 2014 - 2016 Panel data on refugee admissions into US by age (from: https://www.dhs.gov/immigration-statistics/yearbook)
-+ Refugee Arrivals by Gender : 2014 - 2016 Panel data on refugee admissions into US by gender (from: https://www.dhs.gov/immigration-statistics/yearbook)
-+ Refugee Arrivals by Marital Status : 2014 - 2016 Panel data on refugee admissions into US by marital status (from: https://www.dhs.gov/immigration-statistics/yearbook)
++ Refugee Arrivals by Age : 2014 - 2016 Panel data on refugee admissions into US by age (https://www.dhs.gov/immigration-statistics/yearbook)
++ Refugee Arrivals by Gender : 2014 - 2016 Panel data on refugee admissions into US by gender (https://www.dhs.gov/immigration-statistics/yearbook)
++ Refugee Arrivals by Marital Status : 2014 - 2016 Panel data on refugee admissions into US by marital status (https://www.dhs.gov/immigration-statistics/yearbook)
 + Polling Data : Polling Data including questions about feelings towards refugees and increasing the number of refugees resettled in the United States.
 	+ Pew - April 2017 Political Survey (Q68)
 	+ Pew - February 2017 Political Survey (Q35, Q70F1, & Q71F2)
@@ -32,6 +32,6 @@ Other
 	+ Brookings - 2016 Immigration Survey (Q13e, Q16 for immigrants, Q25 for immigrants by region)
 
 
-There are additional aggregated refugee admissions for FY2009 - FY 2018 here: http://www.wrapsnet.org/archives/
+There are additional aggregated refugee admissions for FY2009 - FY 2018 here (http://www.wrapsnet.org/archives/)
 
 Census data, like the Annual Survey of Entrepreneurs (https://www.census.gov/data/tables/2016/econ/ase/2016-ase-characteristics.html) might be useful if one has experience working with this API. 
