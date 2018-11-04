@@ -1,6 +1,5 @@
 library(dplyr)
 library(stringr)
-library()
 
 orgs<-read_csv("Matching Grants Volunteer Agencies.csv")
 cities$city<-unique(arrivalsall$Assur_DestinationCity1)
