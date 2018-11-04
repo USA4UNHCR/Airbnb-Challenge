@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Refugees By Age in 2016"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 25,
+		toolTipContent: "<b>{label}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}",
+		dataPoints:
+
+      [
+			{ y: 21901, label: "0-9 years" },
+			{ y: 18996, label: "10-19 years" },
+			{ y: 15999, label: "20-29 years" },
+			{ y: 13660, label: "30-39 years" },
+			{ y: 7492, label: "40-49 years" },
+			{ y: 3801, label: "50-59 years" },
+			{ y: 3140, label: "60+" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

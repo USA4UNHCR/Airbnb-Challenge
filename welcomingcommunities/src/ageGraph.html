@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+		<title>D3: A simple packed Bubble Chart</title>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+
+		<style type="text/css">
+			/* No style rules here yet */
+		</style>
+</head>
+<body>
+	<script type="text/javascript">
+
+        dataset = {
+            "children": [
+  {
+    "Characteristic": "0-9 years",
+    "Percent": '25.7%',
+    "Total": 21901,
+  },
+  {
+    "Characteristic": "10 to 19 years",
+    "Percent": '22.3%',
+    "Total": 18996,
+
+
+  },
+  {
+    "Characteristic": "20 to 29 years",
+    "Percent": '18.8%',
+    "Total": 15999,
+  },
+  {
+    "Characteristic": "30 to 39 years",
+    "Percent": '16%',
+    "Total": 13660,
+
+  },
+  {
+    "Characteristic": "40-49 years",
+    "Percent": '.088%',
+    "Total": 7492,
+
+  },
+  {
+    "Characteristic": "50-59 years: .044%",
+    "Percent": '.044%',
+    "Total": 3801,
+
+  },
+               {
+    "Characteristic": "60+ years: .037%",
+    "Percent": '.037%',
+    "Total": 3140,
+
+  },
+
+
+]
+        };
+
+        var diameter = 800;
+        var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+        var bubble = d3.pack(dataset)
+            .size([diameter, diameter])
+            .padding(1.5);
+
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", diameter)
+            .attr("height", diameter)
+            .attr("class", "bubble");
+
+        var nodes = d3.hierarchy(dataset)
+            .sum(function(d) { return d.Total; });
+
+        var node = svg.selectAll(".node")
+            .data(bubble(nodes).descendants())
+            .enter()
+            .filter(function(d){
+                return  !d.children
+            })
+            .append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+
+        node.append("title")
+            .text(function(d) {
+                return d.Characteristic + ": " + d.Total;
+            });
+
+        node.append("circle")
+            .attr("r", function(d) {
+                return d.r;
+            })
+            .style("fill", function(d,i) {
+                return color(i);
+            });
+
+        node.append("text")
+            .attr("dy", ".2em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Characteristic.substring(0, d.r / 3);
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", function(d){
+                return d.r/5;
+            })
+            .attr("fill", "white");
+
+        node.append("text")
+            .attr("dy", "1.3em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Total;
+            })
+            .attr("font-family",  "Gill Sans", "Gill Sans MT")
+            .attr("font-size", function(d){
+                return d.r/5;
+            })
+            .attr("fill", "white");
+
+
+        node.append("text")
+            .attr("dy", "2.5em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.Percent;
+            })
+            .attr("font-family",  "Gill Sans", "Gill Sans MT")
+            .attr("font-size", function(d){
+                return d.r/5;
+            })
+            .attr("fill", "white");
+
+
+
+        d3.select(self.frameElement)
+            .style("height", diameter + "px");
+
+
+
+	</script>
+</body>
+</html>
